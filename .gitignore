@@ -1,0 +1,33 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+
+# ---- Node / frontend (if extended later) ----
+node_modules/
+dist/
+build/
+
+# ---- Editors / OS ----
+.idea/
+.vscode/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ---- Secrets / tokens ----
+.env
+*.pem
+*.key
+tokens.json
+credentials.*
+
+# ---- Local scratch (never commit) ----
+tmp/
+*.tmp
+scratch/
