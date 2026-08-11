@@ -1,0 +1,11 @@
+<p>综合三个方向的语义检索，该知识库中与企业知识问答系统最扎实的内容集中在 <span class="hl">RAG（检索增强生成）</span> 与 <span class="hl">Agent（智能体）</span> 两条主线，二者在乐享"切片向量化 + 通用 Agent 注入团队知识"的架构中交汇：前者负责降低幻觉、让回答可溯源，后者负责组织应用、把知识推到多端问答入口。</p>
+<p><span class="kw">Prompt 工程</span> 方向目前<span class="gap">缺少专门论述</span>，仅以"指令模板"形式存在于使用指南中——这是知识库当前的内容缺口，已如实标注，未做任何引申。</p>
+<p>整体呈现一种清晰的落地范式：<span class="hl">以知识库为底座、以 RAG 降低幻觉、以 Agent 组织应用、以四级权限保障合规</span>，并以"标准产品化"规避上一代 AI 企业堆人力交付、难以盈利的陷阱。</p>
+
+<div class="method">
+  <b>数据来源与真实性说明：</b>本报告全部内容、数字、页面标题与链接，均来自 <b>腾讯云知（乐享）知识库</b> 在 2026-08-06 的真实检索返回，未作任何编造。<br>
+  • 三次调用 <code>search_kb_search</code>，关键词与返回的 <code>total</code> / <code>took_ms</code> 见"检索过程可视化"区；<br>
+  • 论点正文取自命中页面的 snippet 与 <code>entry_describe_ai_parse_content</code> 完整解析内容；<br>
+  • 链接遵循乐享 URL 约定：<code>kb_page / kb_flink → /pages/{id}</code>，<code>kb_file / kb_video → /teams/{team_id}/docs/{id}</code>；<br>
+  • Prompt 工程方向的内容缺口为检索结果的如实反映，非遗漏。
+</div>
