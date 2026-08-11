@@ -104,6 +104,23 @@ Full workflow in [`docs/conventions.md`](./docs/conventions.md). Short version:
 
 ---
 
+## Corpus sufficiency audit (what GitHub doesn't have)
+
+Tools like scholar-rag and automated-slr-generator assume "the corpus is already good enough" and generate straight from it. They skip a more fundamental question: **is this knowledge base even worthy of powering reliable Q&A?** This project closes that gap.
+
+`src/corpus_audit.py` takes several real searches (each with its hit document IDs and empty-container IDs), computes four hard metrics, and renders a verdict:
+
+- **Unique documents** — total distinct documents after dedup.
+- **Cross-query overlap** — whether different intents return the same document set (higher = more同质).
+- **Content-page ratio** — share of documents that actually have body text, after excluding empty KB/folder containers.
+- **Verdict** — sufficient / borderline / insufficient, with a one-line, number-backed reason.
+
+Why is this more useful than "another pretty review"? Because RAG answer quality is capped by corpus quality. A corpus of a handful of demo docs can't be rescued by any "hallucination reduction" — the audit says so outright instead of dressing it up. In the report, the audit card follows the "Search Flow" section and shows the verdict as a red / yellow / green badge.
+
+> Quality bar: this project's prose and code adopt the two rulers from [deaify](https://github.com/Edgarzwj/deaify) — `humanize-prose` (kill AI smell, take a stance, use numbers, don't recap the intro as the ending) and `code-no-slop` (YAGNI, shortest working diff, no fake modularity).
+
+---
+
 ## 7. License
 
 [MIT](./LICENSE) © 2026 Edgarzwj
