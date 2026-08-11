@@ -32,6 +32,9 @@ import json
 import os
 import sys
 
+# 语料充足度审计：与生成器同目录，纯标准库，无外部依赖。
+from corpus_audit import assess, verdict_label
+
 # ----------------------------------------------------------------------------
 # 渲染模板：暗色科技感主题（与首版报告一致的视觉语言，纯内联 CSS）
 # ----------------------------------------------------------------------------
@@ -131,7 +134,17 @@ CSS = """\
   .bar .bl{font:600 12px/1 var(--mono);color:var(--txt2)}
   .bar .bt{height:10px;border-radius:6px;background:linear-gradient(90deg,var(--cyan),var(--purple));box-shadow:0 0 10px rgba(34,211,238,.25)}
   .bar .bv{font:700 12px/1 var(--mono);color:#fff;text-align:right}
-  @media(max-width:820px){.meta{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-content:center}}
+  .audit{background:linear-gradient(160deg,rgba(244,63,94,.08),rgba(251,191,36,.06));border:1px solid var(--line2);border-radius:16px;padding:22px 24px}
+  .audit h2{font-size:20px;margin-bottom:14px}
+  .audit .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:6px 0 14px}
+  .audit .cell{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .audit .cell .k{font:600 11px/1 var(--mono);letter-spacing:.1em;color:var(--txt3);text-transform:uppercase}
+  .audit .cell .v{font-size:22px;font-weight:800;color:#fff;margin-top:8px}
+  .badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;font:700 14px/1 var(--mono);border:1px solid}
+  .badge.insufficient{color:#fda4af;border-color:#7f1d3a;background:rgba(244,63,94,.10)}
+  .badge.borderline{color:#fcd34d;border-color:#7c5e10;background:rgba(251,191,36,.10)}
+  .badge.sufficient{color:#86efac;border-color:#14532d;background:rgba(52,211,153,.10)}
+  @media(max-width:820px){.meta{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-content:center}.audit .grid{grid-template-columns:1fr}}
 """
 
 
@@ -225,12 +238,35 @@ def render_references(refs):
     return "\n".join(items)
 
 
+def render_audit(spec):
+    """若 spec 提供 audit.queries（真实检索的文档 id 集合），渲染语料充足度审计卡。"""
+    audit_q = spec.get("audit", {}).get("queries")
+    if not audit_q:
+        return ""
+    r = assess(audit_q)
+    return f"""  <section>
+    <div class="sec-h"><span class="idx">审计</span><h2>语料充足度审计</h2><span class="tag">第一性原理：RAG 质量 ≤ 语料质量</span></div>
+    <div class="audit">
+      <div class="grid">
+        <div class="cell"><div class="k">唯一文档</div><div class="v">{r['unique_docs']}</div></div>
+        <div class="cell"><div class="k">跨查询重叠率</div><div class="v">{r['avg_overlap']:.0%}</div></div>
+        <div class="cell"><div class="k">内容页占比</div><div class="v">{r['content_ratio']:.0%}</div></div>
+      </div>
+      <span class="badge {r['verdict']}">结论：{verdict_label(r['verdict'])}</span>
+      <p style="margin-top:12px;color:var(--txt)">{esc(r['reason'])}</p>
+    </div>
+  </section>
+"""
+
+
 def build_html(spec, body_html, conclusion_html):
     meta = spec.get("meta", {})
     queries = spec.get("queries", [])
     agg = spec.get("aggregation", {})
     refs = spec.get("references", [])
     rev = spec.get("review_section", {"idx": "02", "title": "综述正文", "tag": "带源角标"})
+
+    audit_html = render_audit(spec)
 
     html = f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -276,6 +312,7 @@ def build_html(spec, body_html, conclusion_html):
     </div>
   </section>
 
+{audit_html}
   <!-- ===== 综述正文 ===== -->
   <section>
     <div class="sec-h"><span class="idx">{esc(rev.get('idx', '02'))}</span><h2>{esc(rev.get('title', '综述正文'))}</h2><span class="tag">{esc(rev.get('tag', '带源角标'))}</span></div>
