@@ -1,0 +1,64 @@
+{
+  "meta": {
+    "kicker": "Knowledge Review · 腾讯云知（乐享）",
+    "title": "企业知识问答系统 · 知识综述",
+    "subtitle": "基于腾讯云知（乐享）知识库语义检索的多方向聚合综述，所有论点均附来源角标与可点击链接。",
+    "source": "数据来源：腾讯云知（乐享）知识库 · lexiangla.com",
+    "account_label": "检索账号",
+    "account": "用户8469",
+    "searches_label": "检索次数",
+    "searches": 3,
+    "searches_unit": "次 search_kb_search",
+    "hits_label": "累计命中",
+    "total_hits": 21,
+    "hits_unit": "条 / 7 唯一文档",
+    "date_label": "检索日期",
+    "date": "2026-08-06"
+  },
+  "queries": [
+    { "q": "Q1 · 企业知识问答 RAG 检索增强生成", "total": 7, "took_ms": 96, "accent": "c" },
+    { "q": "Q2 · 企业知识问答 Prompt 工程", "total": 7, "took_ms": 46, "accent": "p" },
+    { "q": "Q3 · 企业知识问答 Agent 智能体", "total": 7, "took_ms": 84, "accent": "g" }
+  ],
+  "aggregation": {
+    "unique_value": 7,
+    "unique_label": "唯一文档<br>（去重后）",
+    "hits_note": "3×7 = 21 次命中<br>↓ 去重聚合",
+    "split_value": "5+2",
+    "split_label": "5 内容页<br>+ 2 知识库容器",
+    "note": "三条 query 命中集合高度重叠（均为同一批 7 文档），说明该知识库体量以示例文档为主，内容集中在<b>乐享知识库指南</b>与<b>腾讯 AI 战略访谈</b>两类。下方综述仅引用其中 5 个含正文的页面，2 个知识库容器（示例知识库 / 个人知识库）无正文，不计入论点来源。"
+  },
+  "review_section": { "idx": "02", "title": "综述正文", "tag": "带源角标" },
+  "search_flow_title": "检索过程可视化",
+  "search_flow_tag": "query → hits → 聚合",
+  "references_title": "来源引用列表",
+  "references_tag": "标题 + 链接 + 关键词标签",
+  "conclusion_title": "结论",
+  "references": [
+    {
+      "title": "【示例】微信公众号：对话腾讯汤道生，AI不止于大模型",
+      "url": "https://lexiangla.com/pages/5a38f72376ab4e30a95bd866298ff403",
+      "tags": ["RAG检索增强", "Agent智能体", "企业AI布局", "产品化"]
+    },
+    {
+      "title": "快速了解乐享知识库",
+      "url": "https://lexiangla.com/pages/cc9835e5236b4736a3259cbc7a60072d",
+      "tags": ["知识库底座", "Agent智能体", "权限合规", "指令模板"]
+    },
+    {
+      "title": "【示例】在线文档：如何创作一篇文档",
+      "url": "https://lexiangla.com/pages/8fbcea284c054f06b811abfa5b1d0040",
+      "tags": ["智能问答", "权限管控", "知识沉淀"]
+    },
+    {
+      "title": "【示例】PPT文件：AI知识库卓越能力集锦",
+      "url": "https://lexiangla.com/teams/730d60e68c9f11f1a9c06a88df0270e6/docs/8c7ba226db7545ad886925095a2e13c1",
+      "tags": ["AI知识库", "能力集锦"]
+    },
+    {
+      "title": "【示例】视频文件：AI知识库基本原理",
+      "url": "https://lexiangla.com/teams/730d60e68c9f11f1a9c06a88df0270e6/docs/084c507b8544477483a0d8876145c4c1",
+      "tags": ["AI知识库", "基本原理"]
+    }
+  ]
+}
