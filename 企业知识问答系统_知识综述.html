@@ -25,7 +25,6 @@
     line-height:1.7; padding:0 0 80px;
   }
   .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
-  /* header */
   header{
     border-bottom:1px solid var(--line);
     background:linear-gradient(180deg,rgba(17,26,46,.85),rgba(10,15,31,.4));
@@ -39,19 +38,16 @@
   .src-pill{display:inline-flex;align-items:center;gap:8px;margin-top:14px;padding:7px 14px;border:1px solid var(--line2);
     border-radius:999px;background:var(--panel);font:600 13px/1 var(--mono);color:var(--green)}
   .src-pill::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 10px var(--green)}
-  /* meta grid */
   .meta{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:22px}
   .meta .cell{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
   .meta .k{font:600 11px/1 var(--mono);letter-spacing:.12em;color:var(--txt3);text-transform:uppercase}
   .meta .v{font-size:20px;font-weight:800;margin-top:8px;color:#fff}
   .meta .v small{font-size:12px;color:var(--txt2);font-weight:600}
-  /* section */
   section{margin:34px 0}
   .sec-h{display:flex;align-items:baseline;gap:12px;margin-bottom:16px}
   .sec-h .idx{font:800 13px/1 var(--mono);color:var(--bg0);background:var(--cyan);padding:5px 9px;border-radius:6px}
   .sec-h h2{font-size:22px;font-weight:800}
   .sec-h .tag{margin-left:auto;font:600 12px/1 var(--mono);color:var(--txt3);border:1px solid var(--line);padding:5px 10px;border-radius:999px}
-  /* search flow */
   .flow{display:grid;grid-template-columns:1fr auto 1fr;gap:18px;align-items:stretch}
   .qcards{display:grid;gap:12px}
   .qcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 15px;position:relative;overflow:hidden}
@@ -68,7 +64,6 @@
   .agg .node .lbl{font-size:12px;color:var(--txt2);margin-top:4px}
   .agg .sub2{font:600 12px/1.5 var(--mono);color:var(--txt3);text-align:center}
   .arrow{display:flex;align-items:center;color:var(--line2);font-size:26px}
-  /* review prose */
   .prose{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
   .prose p{margin:13px 0;color:var(--txt)}
   .prose p:first-child{margin-top:0}
@@ -82,7 +77,6 @@
   ul.tight{margin:8px 0 4px 20px} ul.tight li{margin:6px 0;color:var(--txt)}
   .hl{color:#fff;font-weight:700}
   .kw{color:var(--cyan)}
-  /* references */
   .refs{display:grid;gap:12px}
   .ref{display:grid;grid-template-columns:48px 1fr;gap:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
   .ref .num{font:800 22px/1 var(--mono);color:var(--cyan);text-align:center}
@@ -93,7 +87,6 @@
   .tagchip{font:600 11px/1 var(--mono);padding:5px 9px;border-radius:999px;border:1px solid var(--line2);color:var(--txt2);background:var(--bg2)}
   .tagchip.r{color:#fda4af;border-color:#7f1d3a} .tagchip.p{color:#d8b4fe;border-color:#5b21b6}
   .tagchip.a{color:#7dd3fc;border-color:#0e4f6b} .tagchip.g{color:#86efac;border-color:#14532d}
-  /* conclusion */
   .concl{background:linear-gradient(160deg,rgba(34,211,238,.08),rgba(168,85,247,.08));border:1px solid var(--line2);border-radius:16px;padding:24px 26px}
   .concl h2{font-size:20px;margin-bottom:12px}
   .concl p{color:var(--txt);margin:10px 0}
@@ -101,7 +94,6 @@
   .method b{color:var(--txt2)}
   .method code{font:600 12px/1.4 var(--mono);color:var(--green);background:var(--bg2);padding:2px 6px;border-radius:5px}
   footer{margin-top:40px;text-align:center;color:var(--txt3);font-size:12.5px}
-  /* timing bars (real took_ms) */
   .bars{margin-top:14px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
   .bars .bar-h{font:600 12px/1 var(--mono);color:var(--txt3);letter-spacing:.08em;margin-bottom:12px;text-transform:uppercase}
   .bar{display:grid;grid-template-columns:84px 1fr 58px;align-items:center;gap:10px;margin:9px 0}
@@ -109,6 +101,7 @@
   .bar .bt{height:10px;border-radius:6px;background:linear-gradient(90deg,var(--cyan),var(--purple));box-shadow:0 0 10px rgba(34,211,238,.25)}
   .bar .bv{font:700 12px/1 var(--mono);color:#fff;text-align:right}
   @media(max-width:820px){.meta{grid-template-columns:repeat(2,1fr)}.flow{grid-template-columns:1fr}.arrow{transform:rotate(90deg);justify-content:center}}
+
 </style>
 </head>
 <body>
@@ -137,21 +130,21 @@
         <div class="qcard">
           <div class="q">Q1 · 企业知识问答 RAG 检索增强生成</div>
           <div class="row">
-            <div class="m"><div class="mk">命中数 TOTAL</div><div class="mv c">7</div></div>
+            <div class="m"><div class="mk">命中数 TOTAL</div><div class="mv mv c">7</div></div>
             <div class="m"><div class="mk">耗时 TOOK_MS</div><div class="mv">96 ms</div></div>
           </div>
         </div>
         <div class="qcard">
           <div class="q">Q2 · 企业知识问答 Prompt 工程</div>
           <div class="row">
-            <div class="m"><div class="mk">命中数 TOTAL</div><div class="mv p">7</div></div>
+            <div class="m"><div class="mk">命中数 TOTAL</div><div class="mv mv p">7</div></div>
             <div class="m"><div class="mk">耗时 TOOK_MS</div><div class="mv">46 ms</div></div>
           </div>
         </div>
         <div class="qcard">
           <div class="q">Q3 · 企业知识问答 Agent 智能体</div>
           <div class="row">
-            <div class="m"><div class="mk">命中数 TOTAL</div><div class="mv g">7</div></div>
+            <div class="m"><div class="mk">命中数 TOTAL</div><div class="mv mv g">7</div></div>
             <div class="m"><div class="mk">耗时 TOOK_MS</div><div class="mv">84 ms</div></div>
           </div>
         </div>
@@ -174,9 +167,9 @@
     <div class="note">三条 query 命中集合高度重叠（均为同一批 7 文档），说明该知识库体量以示例文档为主，内容集中在<b>乐享知识库指南</b>与<b>腾讯 AI 战略访谈</b>两类。下方综述仅引用其中 5 个含正文的页面，2 个知识库容器（示例知识库 / 个人知识库）无正文，不计入论点来源。</div>
     <div class="bars">
       <div class="bar-h">检索耗时对比 · 真实 took_ms（以最长 96ms 为基准）</div>
-      <div class="bar"><span class="bl">Q1 · RAG</span><span class="bt" style="width:100%"></span><span class="bv">96 ms</span></div>
-      <div class="bar"><span class="bl">Q2 · Prompt</span><span class="bt" style="width:47.9%"></span><span class="bv">46 ms</span></div>
-      <div class="bar"><span class="bl">Q3 · Agent</span><span class="bt" style="width:87.5%"></span><span class="bv">84 ms</span></div>
+      <div class="bar"><span class="bl">企业知识问答 RAG 检索增强生成</span><span class="bt" style="width:100.0%"></span><span class="bv">96 ms</span></div>
+      <div class="bar"><span class="bl">企业知识问答 Prompt 工程</span><span class="bt" style="width:47.9%"></span><span class="bv">46 ms</span></div>
+      <div class="bar"><span class="bl">企业知识问答 Agent 智能体</span><span class="bt" style="width:87.5%"></span><span class="bv">84 ms</span></div>
     </div>
   </section>
 
@@ -184,30 +177,30 @@
   <section>
     <div class="sec-h"><span class="idx">02</span><h2>综述正文</h2><span class="tag">带源角标</span></div>
     <div class="prose">
-      <h3>一、背景：企业知识问答系统的定位</h3>
-      <p>企业知识问答系统，是让<span class="hl">通用大模型具备"企业专属知识"能力</span>的应用形态。腾讯将其归入 AI 布局的"应用场景"层——底层基础设施、工具层、模型层之上，直接服务于 to C / to B 产品<span class="kw">[1]</span>。在 CSIG 的企业应用中，<span class="hl">腾讯乐享即用大模型"构建熟悉企业文档库的智能助手"</span>，是这一形态的代表案例<span class="kw">[1]</span>。</p>
-      <p>乐享自身的定位，正是架在通用 Agent 与团队知识之间的桥梁：WorkBuddy 是通用 AI Agent 助手，本不知晓企业的业务术语、产品细节、历史决策与团队规范；接入乐享后，它才能<span class="hl">直接调用团队全部资料</span>，而非仅基于通用知识作答<span class="kw">[2]</span>。</p>
+<h3>一、背景：企业知识问答系统的定位</h3>
+<p>企业知识问答系统，是让<span class="hl">通用大模型具备"企业专属知识"能力</span>的应用形态。腾讯将其归入 AI 布局的"应用场景"层——底层基础设施、工具层、模型层之上，直接服务于 to C / to B 产品<span class="kw">[1]</span>。在 CSIG 的企业应用中，<span class="hl">腾讯乐享即用大模型"构建熟悉企业文档库的智能助手"</span>，是这一形态的代表案例<span class="kw">[1]</span>。</p>
+<p>乐享自身的定位，正是架在通用 Agent 与团队知识之间的桥梁：WorkBuddy 是通用 AI Agent 助手，本不知晓企业的业务术语、产品细节、历史决策与团队规范；接入乐享后，它才能<span class="hl">直接调用团队全部资料</span>，而非仅基于通用知识作答<span class="kw">[2]</span>。</p>
 
-      <h3>二、方向一 · RAG 检索增强生成</h3>
-      <p>这是知识库中论据最扎实的方向。腾讯高层在访谈中明确表示，产业场景要把 AI 用起来，<span class="hl">"很大程度上回到 RAG（检索增强生成）的模式，降低出现幻觉的概率"</span><span class="kw">[1]</span>。在腾讯 AI 四层架构里，<span class="hl">工具层即包含"搭建一套 RAG 系统的引擎框架"</span>，作为对外提供的能力<span class="kw">[1]</span>。</p>
-      <p>乐享在底层工程上印证了这一路线：文档<span class="hl">入库时即被智能解析、精细切片并向量化</span>，使回答又快又省成本——这正是"检索—向量化—生成"的 RAG 链路<span class="kw">[2]</span>。其直接价值是产出<span class="hl">"基于真实资料，引用可溯源"</span>，而非凭空生成，从而缓解幻觉<span class="kw">[2]</span>。</p>
+<h3>二、方向一 · RAG 检索增强生成</h3>
+<p>这是知识库中论据最扎实的方向。腾讯高层在访谈中明确表示，产业场景要把 AI 用起来，<span class="hl">"很大程度上回到 RAG（检索增强生成）的模式，降低出现幻觉的概率"</span><span class="kw">[1]</span>。在腾讯 AI 四层架构里，<span class="hl">工具层即包含"搭建一套 RAG 系统的引擎框架"</span>，作为对外提供的能力<span class="kw">[1]</span>。</p>
+<p>乐享在底层工程上印证了这一路线：文档<span class="hl">入库时即被智能解析、精细切片并向量化</span>，使回答又快又省成本——这正是"检索—向量化—生成"的 RAG 链路<span class="kw">[2]</span>。其直接价值是产出<span class="hl">"基于真实资料，引用可溯源"</span>，而非凭空生成，从而缓解幻觉<span class="kw">[2]</span>。</p>
 
-      <h3>三、方向二 · Agent 智能体</h3>
-      <p>访谈同样强调要重视<span class="hl">"智能体"方向</span>：如何组合不同技术模块，搭建更有价值的应用、解决具体问题<span class="kw">[1]</span>。乐享的落地即建立在 Agent 范式之上——WorkBuddy 作为通用 Agent，乐享为其注入团队知识，使其从"通用回答"升级为"调用团队全部资料"<span class="kw">[2]</span>。</p>
-      <p>其问答入口呈多样化形态：<span class="hl">WorkBuddy 主战场、企业微信智能机器人（群聊直接问答）、微信 ClawBot（个人微信查管编）</span><span class="kw">[2]</span>。典型 Agent 化场景包括：新人入职自助问答、客服售后查标准答案、跨团队查"事实"、销售赋能生成定制方案与报价初稿<span class="kw">[2]</span>。</p>
+<h3>三、方向二 · Agent 智能体</h3>
+<p>访谈同样强调要重视<span class="hl">"智能体"方向</span>：如何组合不同技术模块，搭建更有价值的应用、解决具体问题<span class="kw">[1]</span>。乐享的落地即建立在 Agent 范式之上——WorkBuddy 作为通用 Agent，乐享为其注入团队知识，使其从"通用回答"升级为"调用团队全部资料"<span class="kw">[2]</span>。</p>
+<p>其问答入口呈多样化形态：<span class="hl">WorkBuddy 主战场、企业微信智能机器人（群聊直接问答）、微信 ClawBot（个人微信查管编）</span><span class="kw">[2]</span>。典型 Agent 化场景包括：新人入职自助问答、客服售后查标准答案、跨团队查"事实"、销售赋能生成定制方案与报价初稿<span class="kw">[2]</span>。</p>
 
-      <h3>四、方向三 · Prompt 工程</h3>
-      <p><span class="gap">⚠ 诚实标注：</span>以"企业知识问答 Prompt 工程"为关键词检索，命中数同样为 7、耗时 46ms，但与另两个方向<span class="hl">完全重叠</span>——知识库内<span class="gap">并无专门论述 Prompt 工程方法论</span>的页面。与之最接近、可视为"提示词模板"的素材，是乐享指南提供的<span class="hl">"常见指令模板"</span>（检索类 / 写作类 / 分析类 / 自动化类），用于引导 WorkBuddy 精准调用知识库<span class="kw">[2]</span>。</p>
-      <p>结论：当前知识库在 Prompt 工程方向上<span class="gap">存在内容缺口</span>，相关内容以"使用指令模板"形式存在，而非系统性的提示词工程方法论；本报告不对此方向作任何超出检索结果的引申。</p>
+<h3>四、方向三 · Prompt 工程</h3>
+<p><span class="gap">⚠ 诚实标注：</span>以"企业知识问答 Prompt 工程"为关键词检索，命中数同样为 7、耗时 46ms，但与另两个方向<span class="hl">完全重叠</span>——知识库内<span class="gap">并无专门论述 Prompt 工程方法论</span>的页面。与之最接近、可视为"提示词模板"的素材，是乐享指南提供的<span class="hl">"常见指令模板"</span>（检索类 / 写作类 / 分析类 / 自动化类），用于引导 WorkBuddy 精准调用知识库<span class="kw">[2]</span>。</p>
+<p>结论：当前知识库在 Prompt 工程方向上<span class="gap">存在内容缺口</span>，相关内容以"使用指令模板"形式存在，而非系统性的提示词工程方法论；本报告不对此方向作任何超出检索结果的引申。</p>
 
-      <h3>五、落地形态与工程要点（综合）</h3>
-      <ul class="tight">
-        <li><span class="kw">多源聚合入库</span>：支持百余种格式文件上传、微信公众号文章一键导入、本地文件夹批量导入并保留原目录层级<span class="kw">[2]</span>。</li>
-        <li><span class="kw">精准召回与融合</span>：自动精准检索、多文档融合理解（跨文档归纳要点、对齐口径、剔除重复），过程透明可追溯<span class="kw">[2]</span>。</li>
-        <li><span class="kw">权限与安全合规</span>：企业 / 知识库 / 目录 / 文档四级权限统一管控，AI 调用时自动继承权限<span class="kw">[2][3]</span>。</li>
-        <li><span class="kw">结构化知识问答</span>：智能表格支持"AI 问数"——自然语言直接问答、内容总结一键生成摘要<span class="kw">[3]</span>。</li>
-        <li><span class="kw">产品化警示</span>：上一代 AI 企业多未做出标准产品、靠堆人力做个性化交付，难以规模盈利；新一代需以相对标准产品建立商业模式<span class="kw">[1]</span>。</li>
-      </ul>
+<h3>五、落地形态与工程要点（综合）</h3>
+<ul class="tight">
+  <li><span class="kw">多源聚合入库</span>：支持百余种格式文件上传、微信公众号文章一键导入、本地文件夹批量导入并保留原目录层级<span class="kw">[2]</span>。</li>
+  <li><span class="kw">精准召回与融合</span>：自动精准检索、多文档融合理解（跨文档归纳要点、对齐口径、剔除重复），过程透明可追溯<span class="kw">[2]</span>。</li>
+  <li><span class="kw">权限与安全合规</span>：企业 / 知识库 / 目录 / 文档四级权限统一管控，AI 调用时自动继承权限<span class="kw">[2][3]</span>。</li>
+  <li><span class="kw">结构化知识问答</span>：智能表格支持"AI 问数"——自然语言直接问答、内容总结一键生成摘要<span class="kw">[3]</span>。</li>
+  <li><span class="kw">产品化警示</span>：上一代 AI 企业多未做出标准产品、靠堆人力做个性化交付，难以规模盈利；新一代需以相对标准产品建立商业模式<span class="kw">[1]</span>。</li>
+</ul>
     </div>
   </section>
 
@@ -220,10 +213,7 @@
         <div>
           <div class="ttl">【示例】微信公众号：对话腾讯汤道生，AI不止于大模型</div>
           <div class="url"><a href="https://lexiangla.com/pages/5a38f72376ab4e30a95bd866298ff403" target="_blank" rel="noopener">https://lexiangla.com/pages/5a38f72376ab4e30a95bd866298ff403</a></div>
-          <div class="tags">
-            <span class="tagchip r">RAG检索增强</span><span class="tagchip p">Agent智能体</span>
-            <span class="tagchip a">企业AI布局</span><span class="tagchip g">产品化</span>
-          </div>
+          <div class="tags"><span class="tagchip">RAG检索增强</span><span class="tagchip">Agent智能体</span><span class="tagchip">企业AI布局</span><span class="tagchip">产品化</span></div>
         </div>
       </div>
       <div class="ref" id="ref2">
@@ -231,10 +221,7 @@
         <div>
           <div class="ttl">快速了解乐享知识库</div>
           <div class="url"><a href="https://lexiangla.com/pages/cc9835e5236b4736a3259cbc7a60072d" target="_blank" rel="noopener">https://lexiangla.com/pages/cc9835e5236b4736a3259cbc7a60072d</a></div>
-          <div class="tags">
-            <span class="tagchip a">知识库底座</span><span class="tagchip p">Agent智能体</span>
-            <span class="tagchip g">权限合规</span><span class="tagchip">指令模板</span>
-          </div>
+          <div class="tags"><span class="tagchip">知识库底座</span><span class="tagchip">Agent智能体</span><span class="tagchip">权限合规</span><span class="tagchip">指令模板</span></div>
         </div>
       </div>
       <div class="ref" id="ref3">
@@ -242,9 +229,7 @@
         <div>
           <div class="ttl">【示例】在线文档：如何创作一篇文档</div>
           <div class="url"><a href="https://lexiangla.com/pages/8fbcea284c054f06b811abfa5b1d0040" target="_blank" rel="noopener">https://lexiangla.com/pages/8fbcea284c054f06b811abfa5b1d0040</a></div>
-          <div class="tags">
-            <span class="tagchip a">智能问答</span><span class="tagchip g">权限管控</span><span class="tagchip">知识沉淀</span>
-          </div>
+          <div class="tags"><span class="tagchip">智能问答</span><span class="tagchip">权限管控</span><span class="tagchip">知识沉淀</span></div>
         </div>
       </div>
       <div class="ref" id="ref4">
@@ -252,9 +237,7 @@
         <div>
           <div class="ttl">【示例】PPT文件：AI知识库卓越能力集锦</div>
           <div class="url"><a href="https://lexiangla.com/teams/730d60e68c9f11f1a9c06a88df0270e6/docs/8c7ba226db7545ad886925095a2e13c1" target="_blank" rel="noopener">https://lexiangla.com/teams/730d60e68c9f11f1a9c06a88df0270e6/docs/8c7ba226db7545ad886925095a2e13c1</a></div>
-          <div class="tags">
-            <span class="tagchip a">AI知识库</span><span class="tagchip">能力集锦</span>
-          </div>
+          <div class="tags"><span class="tagchip">AI知识库</span><span class="tagchip">能力集锦</span></div>
         </div>
       </div>
       <div class="ref" id="ref5">
@@ -262,9 +245,7 @@
         <div>
           <div class="ttl">【示例】视频文件：AI知识库基本原理</div>
           <div class="url"><a href="https://lexiangla.com/teams/730d60e68c9f11f1a9c06a88df0270e6/docs/084c507b8544477483a0d8876145c4c1" target="_blank" rel="noopener">https://lexiangla.com/teams/730d60e68c9f11f1a9c06a88df0270e6/docs/084c507b8544477483a0d8876145c4c1</a></div>
-          <div class="tags">
-            <span class="tagchip a">AI知识库</span><span class="tagchip">基本原理</span>
-          </div>
+          <div class="tags"><span class="tagchip">AI知识库</span><span class="tagchip">基本原理</span></div>
         </div>
       </div>
     </div>
@@ -274,17 +255,17 @@
   <section>
     <div class="concl">
       <h2>结论</h2>
-      <p>综合三个方向的语义检索，该知识库中与企业知识问答系统最扎实的内容集中在 <span class="hl">RAG（检索增强生成）</span> 与 <span class="hl">Agent（智能体）</span> 两条主线，二者在乐享"切片向量化 + 通用 Agent 注入团队知识"的架构中交汇：前者负责降低幻觉、让回答可溯源，后者负责组织应用、把知识推到多端问答入口。</p>
-      <p><span class="kw">Prompt 工程</span> 方向目前<span class="gap">缺少专门论述</span>，仅以"指令模板"形式存在于使用指南中——这是知识库当前的内容缺口，已如实标注，未做任何引申。</p>
-      <p>整体呈现一种清晰的落地范式：<span class="hl">以知识库为底座、以 RAG 降低幻觉、以 Agent 组织应用、以四级权限保障合规</span>，并以"标准产品化"规避上一代 AI 企业堆人力交付、难以盈利的陷阱。</p>
+<p>综合三个方向的语义检索，该知识库中与企业知识问答系统最扎实的内容集中在 <span class="hl">RAG（检索增强生成）</span> 与 <span class="hl">Agent（智能体）</span> 两条主线，二者在乐享"切片向量化 + 通用 Agent 注入团队知识"的架构中交汇：前者负责降低幻觉、让回答可溯源，后者负责组织应用、把知识推到多端问答入口。</p>
+<p><span class="kw">Prompt 工程</span> 方向目前<span class="gap">缺少专门论述</span>，仅以"指令模板"形式存在于使用指南中——这是知识库当前的内容缺口，已如实标注，未做任何引申。</p>
+<p>整体呈现一种清晰的落地范式：<span class="hl">以知识库为底座、以 RAG 降低幻觉、以 Agent 组织应用、以四级权限保障合规</span>，并以"标准产品化"规避上一代 AI 企业堆人力交付、难以盈利的陷阱。</p>
 
-      <div class="method">
-        <b>数据来源与真实性说明：</b>本报告全部内容、数字、页面标题与链接，均来自 <b>腾讯云知（乐享）知识库</b> 在 2026-08-06 的真实检索返回，未作任何编造。<br>
-        • 三次调用 <code>search_kb_search</code>，关键词与返回的 <code>total</code> / <code>took_ms</code> 见"检索过程可视化"区；<br>
-        • 论点正文取自命中页面的 snippet 与 <code>entry_describe_ai_parse_content</code> 完整解析内容；<br>
-        • 链接遵循乐享 URL 约定：<code>kb_page / kb_flink → /pages/{id}</code>，<code>kb_file / kb_video → /teams/{team_id}/docs/{id}</code>；<br>
-        • Prompt 工程方向的内容缺口为检索结果的如实反映，非遗漏。
-      </div>
+<div class="method">
+  <b>数据来源与真实性说明：</b>本报告全部内容、数字、页面标题与链接，均来自 <b>腾讯云知（乐享）知识库</b> 在 2026-08-06 的真实检索返回，未作任何编造。<br>
+  • 三次调用 <code>search_kb_search</code>，关键词与返回的 <code>total</code> / <code>took_ms</code> 见"检索过程可视化"区；<br>
+  • 论点正文取自命中页面的 snippet 与 <code>entry_describe_ai_parse_content</code> 完整解析内容；<br>
+  • 链接遵循乐享 URL 约定：<code>kb_page / kb_flink → /pages/{id}</code>，<code>kb_file / kb_video → /teams/{team_id}/docs/{id}</code>；<br>
+  • Prompt 工程方向的内容缺口为检索结果的如实反映，非遗漏。
+</div>
     </div>
   </section>
 
