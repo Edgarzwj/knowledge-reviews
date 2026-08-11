@@ -1,0 +1,24 @@
+<h3>一、背景：企业知识问答系统的定位</h3>
+<p>企业知识问答系统，是让<span class="hl">通用大模型具备"企业专属知识"能力</span>的应用形态。腾讯将其归入 AI 布局的"应用场景"层——底层基础设施、工具层、模型层之上，直接服务于 to C / to B 产品<span class="kw">[1]</span>。在 CSIG 的企业应用中，<span class="hl">腾讯乐享即用大模型"构建熟悉企业文档库的智能助手"</span>，是这一形态的代表案例<span class="kw">[1]</span>。</p>
+<p>乐享自身的定位，正是架在通用 Agent 与团队知识之间的桥梁：WorkBuddy 是通用 AI Agent 助手，本不知晓企业的业务术语、产品细节、历史决策与团队规范；接入乐享后，它才能<span class="hl">直接调用团队全部资料</span>，而非仅基于通用知识作答<span class="kw">[2]</span>。</p>
+
+<h3>二、方向一 · RAG 检索增强生成</h3>
+<p>这是知识库中论据最扎实的方向。腾讯高层在访谈中明确表示，产业场景要把 AI 用起来，<span class="hl">"很大程度上回到 RAG（检索增强生成）的模式，降低出现幻觉的概率"</span><span class="kw">[1]</span>。在腾讯 AI 四层架构里，<span class="hl">工具层即包含"搭建一套 RAG 系统的引擎框架"</span>，作为对外提供的能力<span class="kw">[1]</span>。</p>
+<p>乐享在底层工程上印证了这一路线：文档<span class="hl">入库时即被智能解析、精细切片并向量化</span>，使回答又快又省成本——这正是"检索—向量化—生成"的 RAG 链路<span class="kw">[2]</span>。其直接价值是产出<span class="hl">"基于真实资料，引用可溯源"</span>，而非凭空生成，从而缓解幻觉<span class="kw">[2]</span>。</p>
+
+<h3>三、方向二 · Agent 智能体</h3>
+<p>访谈同样强调要重视<span class="hl">"智能体"方向</span>：如何组合不同技术模块，搭建更有价值的应用、解决具体问题<span class="kw">[1]</span>。乐享的落地即建立在 Agent 范式之上——WorkBuddy 作为通用 Agent，乐享为其注入团队知识，使其从"通用回答"升级为"调用团队全部资料"<span class="kw">[2]</span>。</p>
+<p>其问答入口呈多样化形态：<span class="hl">WorkBuddy 主战场、企业微信智能机器人（群聊直接问答）、微信 ClawBot（个人微信查管编）</span><span class="kw">[2]</span>。典型 Agent 化场景包括：新人入职自助问答、客服售后查标准答案、跨团队查"事实"、销售赋能生成定制方案与报价初稿<span class="kw">[2]</span>。</p>
+
+<h3>四、方向三 · Prompt 工程</h3>
+<p><span class="gap">⚠ 诚实标注：</span>以"企业知识问答 Prompt 工程"为关键词检索，命中数同样为 7、耗时 46ms，但与另两个方向<span class="hl">完全重叠</span>——知识库内<span class="gap">并无专门论述 Prompt 工程方法论</span>的页面。与之最接近、可视为"提示词模板"的素材，是乐享指南提供的<span class="hl">"常见指令模板"</span>（检索类 / 写作类 / 分析类 / 自动化类），用于引导 WorkBuddy 精准调用知识库<span class="kw">[2]</span>。</p>
+<p>结论：当前知识库在 Prompt 工程方向上<span class="gap">存在内容缺口</span>，相关内容以"使用指令模板"形式存在，而非系统性的提示词工程方法论；本报告不对此方向作任何超出检索结果的引申。</p>
+
+<h3>五、落地形态与工程要点（综合）</h3>
+<ul class="tight">
+  <li><span class="kw">多源聚合入库</span>：支持百余种格式文件上传、微信公众号文章一键导入、本地文件夹批量导入并保留原目录层级<span class="kw">[2]</span>。</li>
+  <li><span class="kw">精准召回与融合</span>：自动精准检索、多文档融合理解（跨文档归纳要点、对齐口径、剔除重复），过程透明可追溯<span class="kw">[2]</span>。</li>
+  <li><span class="kw">权限与安全合规</span>：企业 / 知识库 / 目录 / 文档四级权限统一管控，AI 调用时自动继承权限<span class="kw">[2][3]</span>。</li>
+  <li><span class="kw">结构化知识问答</span>：智能表格支持"AI 问数"——自然语言直接问答、内容总结一键生成摘要<span class="kw">[3]</span>。</li>
+  <li><span class="kw">产品化警示</span>：上一代 AI 企业多未做出标准产品、靠堆人力做个性化交付，难以规模盈利；新一代需以相对标准产品建立商业模式<span class="kw">[1]</span>。</li>
+</ul>
