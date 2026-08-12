@@ -254,6 +254,7 @@ def render_audit(spec):
       </div>
       <span class="badge {r['verdict']}">结论：{verdict_label(r['verdict'])}</span>
       <p style="margin-top:12px;color:var(--txt)">{esc(r['reason'])}</p>
+      {f'<p style="margin-top:10px;font-size:13px;color:var(--txt2)">{esc(spec["audit"].get("note",""))}</p>' if spec.get("audit",{}).get("note") else ""}
     </div>
   </section>
 """
