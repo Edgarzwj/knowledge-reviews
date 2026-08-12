@@ -187,12 +187,13 @@
     <div class="sec-h"><span class="idx">审计</span><h2>语料充足度审计</h2><span class="tag">第一性原理：RAG 质量 ≤ 语料质量</span></div>
     <div class="audit">
       <div class="grid">
-        <div class="cell"><div class="k">唯一文档</div><div class="v">7</div></div>
-        <div class="cell"><div class="k">跨查询重叠率</div><div class="v">100%</div></div>
-        <div class="cell"><div class="k">内容页占比</div><div class="v">71%</div></div>
+        <div class="cell"><div class="k">唯一文档</div><div class="v">12</div></div>
+        <div class="cell"><div class="k">跨查询重叠率</div><div class="v">71%</div></div>
+        <div class="cell"><div class="k">内容页占比</div><div class="v">83%</div></div>
       </div>
-      <span class="badge insufficient">结论：不足</span>
-      <p style="margin-top:12px;color:var(--txt)">唯一文档仅 7 篇，跨查询重叠率 100%，语料过于单薄且高度同质，撑不起可靠的知识问答 / RAG。</p>
+      <span class="badge borderline">结论：临界</span>
+      <p style="margin-top:12px;color:var(--txt)">唯一文档 12 篇、内容页占比 83%、跨查询重叠率 71%，能起步，但覆盖仍需扩充。</p>
+      <p style="margin-top:10px;font-size:13px;color:var(--txt2)">检索可命中 7 唯一文档（不足）；另于 2026-08-12 新贡献 5 篇真实可信知识文档（来源：Forrester / Gartner / IDC / PwC 2025–2026、cioage、百度云、ONES 等权威资料），按主题归入各 query 后合计 12 唯一文档 → 临界。新文档为在线文档页，检索索引异步同步中，未同步前 RAG 暂不能直接命中，属正常建索引延迟。</p>
     </div>
   </section>
 
